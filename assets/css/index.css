@@ -1,0 +1,73 @@
+/* Home Page */
+.hero {
+    margin: 4% 6%;
+    background-color: white;
+    padding: 60px 60px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero-bio {
+    width: 65%;
+}
+
+.bio-text h1 {
+    margin-bottom: 16px;
+}
+
+.bio-link {
+    display: flex;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.link-contact button {
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 8px 24px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.link-cv {
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.link-cv span {
+    margin-right: 6px;
+}
+
+.link-cv img {
+    height: 20px;
+}
+
+.bio-social {
+    margin-top: 40px;
+    width: fit-content;
+    display: flex;
+    gap: 16px;
+}
+
+.bio-social a img {
+    width: 28px;
+}
+
+.hero-card {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.hero-card img {
+    height: 300px;
+}
+
+.card-text {
+    text-align: center;
+}

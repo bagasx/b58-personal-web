@@ -1,0 +1,162 @@
+/* Form */
+.form {
+    margin: 1% 32%;
+}
+
+.form h1 {
+    text-align: center;
+    margin: 30px 0 10px 0;
+}
+
+.form div {
+    margin-bottom: 8px;
+}
+
+input[type=text],
+input[type=file],
+input[type=date],
+select,
+textarea {
+    background-color: white;
+    width: 100%;
+    padding: 10px 14px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    outline: none;
+    font: inherit;
+}
+
+label {
+    font-weight: 500;
+}
+
+.f-date {
+    display: flex;
+    gap: 10px;
+}
+
+.f-date div {
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    height: 16px;
+    width: 16px;
+}
+
+.cb-container {
+    margin-top: 8px;
+    display: flex;
+    gap: 20%;
+}
+
+.cb-wrap div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cb-wrap label {
+    font-weight: 400;
+}
+
+.cb-wrap div input {
+    margin-right: 4px;
+}
+
+.f-submit {
+    background-color: #e52d65;
+    color: white;
+    border: none;
+    padding: 8px 32px;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+/* My Project */
+.myproject {
+    background-color: white;
+    margin-top: 60px;
+    padding: 4% 6%;
+    padding-bottom: 5%;
+}
+
+.myproject h1 {
+    text-align: center;
+}
+
+.card-container {
+    margin-top: 40px;
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    background-color: white;
+    box-shadow: rgba(19, 19, 19, 0.16) 0px 10px 24px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 16px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.title h2 {
+    font-weight: 600;
+}
+
+.title p {
+    color: grey;
+}
+
+.desc p {
+    margin-top: 14px;
+    color: grey;
+}
+
+.tech {
+    margin-top: 20px;
+}
+
+.tech img{
+    margin-right: 4px;
+    height: 20px;
+    width: 20px;
+    border-radius: 0;
+}
+
+.btn {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+
+.btn button {
+    width: 100%;
+    border: none;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.edit {
+    background-color: #151515;
+    color: white;
+}
+
+.delete {
+    background-color: #A91D3A;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
