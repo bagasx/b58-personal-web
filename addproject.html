@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -9,7 +10,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-white shadow sticky-top">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <img src="assets/img/dumbways.png" class="align-text-bottom" alt="Bootstrap" height="24" />
@@ -23,49 +24,68 @@
               <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="addproject.html">Add Project</a>
+              <a class="nav-link active" aria-current="page" href="addproject.html">Add Project</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="testimonial.html">Testimonials</a>
             </li>
           </ul>
+          <a href="contact.html" class="btn btn-dark rounded-3">Contact Me</a>
         </div>
       </div>
     </nav>
 
-    <!-- Contact -->
+    <!-- Add My Project -->
     <div class="container form-container w-50 py-3 py-lg-5">
-      <h2 class="text-center fw-semibold mb-4">GET IN TOUCH</h2>
-      <form onsubmit="sendEmail(event)" method="post">
+      <h2 class="text-center fw-semibold mb-4">Add Project</h2>
+      <form>
         <div class="mb-3">
-          <label for="name" class="form-label fw-semibold">Name</label>
-          <input type="text" class="form-control" id="name" />
+          <label for="email" class="form-label fw-semibold">Project Name</label>
+          <input type="text" class="form-control" id="email1" />
+        </div>
+        <div class="mb-3 d-flex gap-3">
+          <div class="w-100">
+            <label for="start-date" class="form-label fw-semibold">Start Date</label>
+            <input type="date" class="form-control" id="start-date" />
+          </div>
+          <div class="w-100">
+            <label for="end-date" class="form-label fw-semibold">End Date</label>
+            <input type="date" class="form-control" id="end-date" />
+          </div>
         </div>
         <div class="mb-3">
-          <label for="email" class="form-label fw-semibold">Email</label>
-          <input type="text" class="form-control" id="email" />
+          <label for="description" class="form-label fw-semibold">Description</label>
+          <textarea class="form-control" id="description"></textarea>
         </div>
         <div class="mb-3">
-          <label for="phone" class="form-label fw-semibold">Phone Number</label>
-          <input type="text" class="form-control" id="phone" />
+          <label class="form-label fw-semibold">Technologies</label>
+          <div class="row">
+            <div class="col-4">
+              <input type="checkbox" class="form-check-input" id="html" />
+              <label for="html">HTML</label>
+            </div>
+            <div class="col-8">
+              <input type="checkbox" class="form-check-input" id="html" />
+              <label for="html">JavaScript</label>
+            </div>
+            <div class="col-4">
+              <input type="checkbox" class="form-check-input" id="html" />
+              <label for="html">CSS</label>
+            </div>
+            <div class="col-8">
+              <input type="checkbox" class="form-check-input" id="html" />
+              <label for="html">React JS</label>
+            </div>
+          </div>
         </div>
         <div class="mb-3">
-          <label for="select" class="form-label fw-semibold">Subject</label>
-          <select class="form-select mb-3" id="subject">
-            <option selected>Select one</option>
-            <option value="Fullstack Developer">Fullstack Developer</option>
-            <option value="Frontend Developer">Frontend Developer</option>
-            <option value="Backend Developer">Backend Developer</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label fw-semibold">Your Message</label>
-          <textarea class="form-control" id="message"></textarea>
+          <label for="description" class="form-label fw-semibold">Description</label>
+          <input type="file" class="form-control" id="end-date" />
         </div>
         <button type="submit" class="btn btn-dark px-4 mt-3">Submit</button>
       </form>
     </div>
-    <script src="assets/js/contact.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

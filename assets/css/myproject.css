@@ -157,6 +157,9 @@ input[type="checkbox"] {
     color: white;
 }
 
-.hidden {
-    display: none;
+/* Responsive Home Page */
+@media only screen and (max-width: 640px) {
+    .form {
+        margin: 1% 4%;
+    }
 }

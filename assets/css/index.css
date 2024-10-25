@@ -17,6 +17,10 @@
     margin-bottom: 16px;
 }
 
+.bio-text p {
+    text-align: justify;
+}
+
 .bio-link {
     display: flex;
     margin-top: 30px;
@@ -70,4 +74,30 @@
 
 .card-text {
     text-align: center;
+}
+
+/* Responsive Home Page */
+@media only screen and (max-width: 640px) {
+    .hero {
+        display: block;
+        padding: 24px 24px;
+        margin: 20px 4%;
+    }
+
+    .hero-bio {
+        width: 100%;
+    }
+
+    .bio-text h1 {
+        font-size: 26px;
+        margin-bottom: 8px;
+    }
+
+    .bio-link {
+        margin-top: 24px;
+    }
+
+    .bio-social {
+        margin: 32px auto;
+    }
 }

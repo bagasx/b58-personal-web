@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
+    <title>Contact</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="nav">
+      <img class="nav-logo" src="assets/img/dumbways.png" alt="dumbways" />
+      <ul class="nav-link">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="myproject.html">My Project</a></li>
+        <li><a href="testimonial.html">Testimonial</a></li>
+      </ul>
+    </nav>
+    <!-- Form -->
+    <form class="form" onsubmit="sendEmail(event)" method="post">
+      <h1>GET IN TOUCH</h1>
+      <div>
+        <label for="f-name">Name</label>
+        <input type="text" name="f-name" id="f-name" />
+      </div>
+      <div>
+        <label for="f-email">Email</label>
+        <input type="text" name="f-email" id="f-email" />
+      </div>
+      <div>
+        <label for="f-phone">Phone Number</label>
+        <input type="text" name="f-phone" id="f-phone" />
+      </div>
+      <div>
+        <label for="f-subject">Subject</label>
+        <select name="f-subject" id="f-subject">
+          <option value="Fullstack Developer">Fullstack Developer</option>
+          <option value="Frontend Developer">Frontend Developer</option>
+          <option value="Backend Developer">Backend Developer</option>
+        </select>
+      </div>
+      <div>
+        <label for="f-message">Your Message</label>
+        <textarea name="f-message" id="f-message"></textarea>
+      </div>
+      <button class="f-submit">Submit</button>
+    </form>
+
+    <script src="assets/js/contact.js"></script>
+  </body>
+</html>

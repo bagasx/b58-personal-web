@@ -1,0 +1,111 @@
+/* Global */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f3f4f6;
+}
+
+input[type=text],
+select,
+button {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Navigation Bar */
+.nav {
+    background-color: white;
+    display: flex;
+    padding: 16px 6%;
+    align-items: center;
+    height: 64px;
+    border-bottom: 1.5px solid #e5e7eb;
+}
+
+.nav-logo {
+    height: 24px;
+    margin-right: 30px;
+}
+
+.nav-link {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-btn, .hamburger-contact {
+    background-color: #1f2937;
+    color: white;
+    padding: 5px 14px;
+    border-radius: 8px;
+    margin-left: auto;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.hamburger-button {
+    border: none;
+    margin-left: auto;
+}
+
+.hamburger-container {
+    background-color: white;
+    padding: 16px 6%;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    border-top: 1.5px solid #e4ebf3;
+}
+
+.hamburger-link {
+    margin-bottom: 20px;
+}
+
+.hamburger-link li {
+    margin-bottom: 10px;
+}
+
+
+/* Responsive Navbar */
+@media only screen and (max-width: 640px) {
+    .nav {
+        padding: 16px 4%;
+    }
+
+    .nav-link, .nav-btn {
+        display: none;
+    }
+
+    .hamburger-button {
+        display: block;
+    }
+}
+

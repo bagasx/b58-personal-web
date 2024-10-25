@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/myproject.css" />
-    <link rel="stylesheet" href="assets/css/modal.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>My Project</title>
   </head>
   <body>
@@ -15,9 +21,22 @@
       <ul class="nav-link">
         <li><a href="index.html">Home</a></li>
         <li><a href="myproject.html" class="active">My Project</a></li>
+        <li><a href="testimonial.html">Testimonial</a></li>
       </ul>
       <a class="nav-btn" href="contact.html">Contact Me</a>
+      <button class="hamburger-button hidden">
+        <i class="fa-solid fa-bars fa-lg"></i>
+      </button>
     </nav>
+
+    <div class="hamburger-container">
+      <ul class="hamburger-link">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="myproject.html">My Project</a></li>
+      </ul>
+      <a class="hamburger-contact" href="contact.html">Contact Me</a>
+    </div>
+
     <!-- Form -->
     <form class="form" onsubmit="addProject(event)" method="post">
       <h1>ADD MY PROJECT</h1>
