@@ -1,0 +1,22 @@
+{{> header}}
+  {{> navbar}}
+
+  <!-- Testimonials -->
+  <div class="container text-center mb-5">
+    <h2 class="py-3 py-lg-5">My Testimonials</h2>
+    <h5 class="mb-4">Rating by Star</h5>
+    <div class="d-flex justify-content-center gap-3">
+      <button class="btn btn-dark" onclick="getAllTestimonial()">All</button>
+      <button class="btn btn-dark" onclick="getTestimonialByStar(1)">1 <i class="fa-solid fa-star fa-xs"></i></button>
+      <button class="btn btn-dark" onclick="getTestimonialByStar(2)">2 <i class="fa-solid fa-star fa-xs"></i></button>
+      <button class="btn btn-dark" onclick="getTestimonialByStar(3)">3 <i class="fa-solid fa-star fa-xs"></i></button>
+      <button class="btn btn-dark" onclick="getTestimonialByStar(4)">4 <i class="fa-solid fa-star fa-xs"></i></button>
+      <button class="btn btn-dark" onclick="getTestimonialByStar(5)">5 <i class="fa-solid fa-star fa-xs"></i></button>
+      <button class="btn btn-dark" onclick="getTestimonialByStar(6)">6 <i class="fa-solid fa-star fa-xs"></i></button>
+    </div>
+    <div id="container-card" class="row row-cols-1 row-cols-lg-3 g-4 mt-4">
+    </div>
+  </div>
+  
+  <script src="assets/js/async.js"></script>
+{{> footer}}

@@ -1,0 +1,37 @@
+{{> header}}
+  {{> navbar}}
+
+  <!-- Contact -->
+  <div class="container form-container w-50 py-3 py-lg-5">
+    <h2 class="text-center fw-semibold mb-4">GET IN TOUCH</h2>
+    <form onsubmit="sendEmail(event)" method="post">
+      <div class="mb-3">
+        <label for="name" class="form-label fw-semibold">Name</label>
+        <input type="text" class="form-control" id="name" />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label fw-semibold">Email</label>
+        <input type="text" class="form-control" id="email" />
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label fw-semibold">Phone Number</label>
+        <input type="text" class="form-control" id="phone" />
+      </div>
+      <div class="mb-3">
+        <label for="select" class="form-label fw-semibold">Subject</label>
+        <select class="form-select mb-3" id="subject">
+          <option selected>Select one</option>
+          <option value="Fullstack Developer">Fullstack Developer</option>
+          <option value="Frontend Developer">Frontend Developer</option>
+          <option value="Backend Developer">Backend Developer</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label fw-semibold">Your Message</label>
+        <textarea class="form-control" id="message"></textarea>
+      </div>
+      <button type="submit" class="btn btn-dark px-4 mt-3">Submit</button>
+    </form>
+  </div>
+
+{{> footer}}

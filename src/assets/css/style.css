@@ -1,5 +1,9 @@
 body {
-  background-color: #e9ecef
+  background-color: #e5e7eb
+}
+
+.active {
+  font-weight: 600 !important;
 }
 
 @media only screen and (max-width: 640px) {
