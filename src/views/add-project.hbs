@@ -5,24 +5,24 @@
   <div class="container form-container w-50 py-3 py-lg-5">
     <h2 class="text-center fw-semibold mb-4">Add Project</h2>
     {{> alert}}
-    <form method="post" action="/add-project">
+    <form method="post" action="/project/add">
       <div class="mb-3">
         <label for="name" class="form-label fw-semibold">Project Name</label>
-        <input type="text" class="form-control" name="name" required />
+        <input type="text" class="form-control" name="name" />
       </div>
       <div class="mb-3 d-flex gap-3">
         <div class="w-100">
           <label for="startDate" class="form-label fw-semibold">Start Date</label>
-          <input type="date" class="form-control" name="startDate" required />
+          <input type="date" class="form-control" name="startDate" />
         </div>
         <div class="w-100">
           <label for="endDate" class="form-label fw-semibold">End Date</label>
-          <input type="date" class="form-control" name="endDate" required />
+          <input type="date" class="form-control" name="endDate" />
         </div>
       </div>
       <div class="mb-3">
         <label for="description" class="form-label fw-semibold" >Description</label>
-        <textarea class="form-control" name="description" required ></textarea>
+        <textarea class="form-control" name="description" ></textarea>
       </div>
       <div class="mb-3">
         <label class="form-label fw-semibold">Technologies</label>

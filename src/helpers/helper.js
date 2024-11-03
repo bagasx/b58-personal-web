@@ -4,6 +4,10 @@ hbs.registerHelper("tech", function (array, value) {
   return array.includes(value);
 });
 
+hbs.registerHelper("isExist", function (array, value) {
+  return array.includes(value);
+});
+
 hbs.registerHelper("dateDiff", function (startDate, endDate) {
   const date1 = new Date(startDate);
   const date2 = new Date(endDate);
