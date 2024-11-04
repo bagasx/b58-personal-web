@@ -1,0 +1,20 @@
+{{> header}}
+  {{> navbar}}
+
+  <div class="container py-5 my-5">
+    <h2 class="text-center fw-semibold mb-4">Login</h2>
+    <form method="post" action="/login" class="w-25 m-auto" autocomplete="off">
+      {{> alert}}
+      <div class="mb-3">
+        <label for="name" class="form-label fw-semibold">Email</label>
+        <input type="email" class="form-control py-2" name="email" />
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label fw-semibold">Password</label>
+        <input type="password" class="form-control py-2" name="password" />
+      </div>
+      <button type="submit" class="btn btn-dark px-4 mt-4 w-100 py-2">Submit</button>
+    </form>
+  </div>
+
+{{> footer}}

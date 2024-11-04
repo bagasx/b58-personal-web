@@ -8,18 +8,34 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <a class="nav-link {{#if activeHome}} active {{/if}}" href="/">Home</a>
         </li>
+        {{#if user}}
         <li class="nav-item">
           <a class="nav-link {{#if activeAddProject}} active {{/if}}" href="/project/add">Add Project</a>
         </li>
+        {{/if}}
         <li class="nav-item">
           <a class="nav-link {{#if activeTestimonial}} active {{/if}}" href="/testimonial">Testimonials</a>
         </li>
       </ul>
-      <a href="/contact" class="btn btn-dark rounded-3">Contact Me</a>
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        {{#if user}}
+        <li class="nav-item me-3">
+          <a href="/logout" class="nav-link" href="/logout">Logout</a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/register">Register</a>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        {{/if}}
+      </ul>
+      <button href="/contact" class="btn btn-dark rounded-pill">Contact Me</button>
     </div>
   </div>
 </nav>

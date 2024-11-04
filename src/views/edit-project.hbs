@@ -4,6 +4,7 @@
   <!-- Add My Project -->
   <div class="container form-container w-50 py-3 py-lg-5">
     <h2 class="text-center fw-semibold mb-4">Edit Project</h2>
+    {{> alert}}
     <form method="post" action="/project/edit/{{project.id}}">
       <div class="mb-3">
         <label for="name" class="form-label fw-semibold">Project Name</label>

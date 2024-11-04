@@ -1,0 +1,23 @@
+{{> header}}
+  {{> navbar}}
+	
+  <div class="container py-5 my-4">
+    <h2 class="text-center fw-semibold mb-4">Register</h2>
+    <form method="post" action="/register" class="w-25 m-auto" autocomplete="off">
+      <div class="mb-3">
+        <label for="name" class="form-label fw-semibold">Name</label>
+        <input type="text" class="form-control py-2" name="name" />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label fw-semibold">Email</label>
+        <input type="email" class="form-control py-2" name="email" />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label fw-semibold">Password</label>
+        <input type="password" class="form-control py-2" name="password" />
+      </div>
+      <button type="submit" class="btn btn-dark px-4 mt-4 w-100 py-2">Submit</button>
+    </form>
+  </div>
+
+{{> footer}}
