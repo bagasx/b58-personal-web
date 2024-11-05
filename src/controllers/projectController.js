@@ -5,7 +5,7 @@ const sequelize = new Sequelize(config.development);
 const addProject = (req, res) => {
   res.render("add-project", {
     title: "Add Project",
-    activeAddProject: true,
+    addProject: true,
     user: req.session.user
   });
 }
@@ -13,11 +13,12 @@ const addProject = (req, res) => {
 const projectPost = async (req, res) => {
   try {
     const { name, startDate, endDate, description, technologies } = req.body;
-    const query = `INSERT INTO projects(name,start_date,end_date,description,technologies,image) VALUES('${name}','${startDate}','${endDate}','${description}','{${technologies}}','https://essential-addons.com/wp-content/uploads/2023/12/image-2.jpeg')`;
+    const { id } = req.session.user;
+    const imagePath = req.file.path;
+    const query = `INSERT INTO projects(name,start_date,end_date,description,technologies,image,author_id) VALUES('${name}','${startDate}','${endDate}','${description}','{${technologies}}','${imagePath}','${id}')`;
     await sequelize.query(query, { type: QueryTypes.INSERT });
-
     req.flash("success", "Project added successfully!");
-    res.render("add-project");
+    res.render("add-project", { user: req.session.user });
   } catch (err) {
     req.flash("error", "Project failed to add!");
     res.render("add-project");
@@ -26,8 +27,12 @@ const projectPost = async (req, res) => {
 
 const detailProject = async (req, res) => {
   const { id } = req.params;
-
-  const query = `SELECT * FROM projects WHERE id = ${id}`;
+  const query = `
+    SELECT id, name, 
+    TO_CHAR(start_date, 'DD Mon YYYY') as start_date, 
+    TO_CHAR(end_date, 'DD Mon YYYY') as end_date, 
+    description, technologies, image 
+    FROM projects WHERE id=${id}`;
   const project = await sequelize.query(query, { type: QueryTypes.SELECT });
 
   res.render("detail-project", {
@@ -39,8 +44,12 @@ const detailProject = async (req, res) => {
 
 const editProject = async (req, res) => {
   const { id } = req.params;
-
-  const query = `SELECT * FROM projects WHERE id=${id}`;
+  const query = `
+    SELECT id, name, 
+    TO_CHAR(start_date, 'YYYY-MM-DD') as start_date, 
+    TO_CHAR(end_date, 'YYYY-MM-DD') as end_date, 
+    description, technologies, image 
+    FROM projects WHERE id=${id}`;
   const project = await sequelize.query(query, { type: QueryTypes.SELECT });
 
   res.render("edit-project", {
@@ -54,15 +63,18 @@ const editProjectPost = async (req, res) => {
   try {
     const { id } = req.params;
     const { name, startDate, endDate, description, technologies } = req.body;
-    const query = `UPDATE projects SET name='${name}',start_date='${startDate}',end_date='${endDate}',description='${description}',technologies='{${technologies}}' WHERE id=${id}`;
-    await sequelize.query(query, { type: QueryTypes.UPDATE });
 
+    // const a = `SELECT * from projects WHERE id = ${id}`
+    // const project = await sequelize.query
+
+    const imagePath = req.file.path;
+    const query = `UPDATE projects SET name='${name}',start_date='${startDate}',end_date='${endDate}',description='${description}',technologies='{${technologies}}',image='${imagePath}' WHERE id=${id}`;
+    await sequelize.query(query, { type: QueryTypes.UPDATE });
     req.flash("success", "Project edited successful!");
-    res.redirect(`/`);
+    res.redirect("/");
   } catch (err) {
-    const { id } = req.params;
     req.flash("error", "Failed to edit project");
-    res.redirect(`/project/edit/${id}`);
+    res.redirect(`/`);
   }
 }
 

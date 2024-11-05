@@ -12,7 +12,7 @@
             <div class="card-body">
               <h2 class="card-title">Hi, Welcome to my hut</h2>
               <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non feugiat sem. Curabitur bibendum ex convallis aliquet scelerisque. Aenean sed consectetur libero. Quisque laoreet lacinia elit, iaculis iaculis odio iaculis dapibus. Donec eget convallis lacus, non interdum justo. Aliquam commodo mi vel bibendum vulputate. Quisque vehicula neque a congue bibendum. Ut vestibulum, turpis at aliquet vehicula, eros lorem vestibulum orci, eget vehicula enim turpis ac libero. Phasellus cursus arcu id mollis commodo.</p>
-              <a href="contact" class="btn btn-dark rounded-pill">Contact me</a>
+              <a href="/contact" class="btn btn-dark rounded-pill">Contact me</a>
               <a href="#" class="btn btn-outline-light text-black">Download CV <img src="assets/icon/download.svg" alt="" class="align-text-bottom" style="height: 18px;" /></a>
               <div class="d-flex gap-3 mt-4">
                 <a href="https://www.linkedin.com/in/bagasariantono/"><img src="assets/icon/linkedin.svg" alt="linkedin" style="height: 30px" /></a>
@@ -38,11 +38,13 @@
     <div class="container">
       <h2 class="text-center mb-5">MY PROJECT</h2>
       <div class="row row-cols-1 row-cols-lg-3 g-4">
+        
+        
         {{#each projects}}
         <div class="col">
           <div class="card shadow">
             <a href="/project/detail/{{id}}" class="stretched-link"></a>
-            <img src="{{image}}" class="px-3 pt-3" alt="image" />
+            <img src="{{image}}" class="px-3 pt-3 card-img" alt="image" />
             <div class="card-body">
               <h5 class="card-title">{{name}}</h5>
               <h6 class="card-subtitle mb-2 text-body-tertiary">Duration - {{dateDiff start_date end_date}}</h6>
@@ -52,10 +54,14 @@
                 <span class="badge text-bg-secondary">{{this}}</span>
                 {{/each}}
               </div>
+              {{#if ../user}}
               <div class="d-flex gap-2 mt-4">
                 <a href="/project/edit/{{id}}" class="btn btn-dark w-100 rounded-pill z-1">Edit</a>
                 <a href="/project/delete/{{id}}" class="btn btn-danger w-100 rounded-pill z-1">Delete</a>
               </div>
+              {{else}}
+                <a href="/project/detail/{{id}}" class="btn btn-dark w-100 rounded-pill z-1 mt-3">Detail</a>
+              {{/if}}
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 
 // Register
 const register = (req, res) => {
-  res.render("register");
+  res.render("register", { register: true });
 }
 
 const registerPost = async (req, res) => {
@@ -19,7 +19,7 @@ const registerPost = async (req, res) => {
 
 // Login
 const login = (req, res) => {
-  res.render("login");
+  res.render("login", { login: true });
 }
 
 const loginPost = async (req, res) => {
@@ -39,14 +39,13 @@ const loginPost = async (req, res) => {
 
   req.flash("welcome", "Hello");
   req.session.user = user[0];
-
+  req.session.author = user[0].id;
   res.redirect("/");
 }
 
 // Logout
 const logout = (req, res) => {
   req.session.destroy();
-
   res.redirect("/");
 };
 

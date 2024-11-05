@@ -6,6 +6,11 @@ body {
   font-weight: 600 !important;
 }
 
+.card-img {
+  height: 200px;
+  object-fit: cover;
+}
+
 @media only screen and (max-width: 640px) {
   .form-container {
     width: 100% !important
