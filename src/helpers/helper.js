@@ -30,7 +30,3 @@ hbs.registerHelper("dateDiff", function (startDate, endDate) {
     return `${year} Years`;
   }
 });
-
-hbs.registerHelper("authorProject", function (array, val) {
-  return array.includes(val);
-});
