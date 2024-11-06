@@ -9,8 +9,7 @@ const home = async (req, res) => {
   const authorProject = projects.filter(project => {
     return project.author_id == authorId;
   })
-  console.log(authorProject);
-
+  // console.log(authorProject);
   // console.log(authorProject)
   res.render("index", {
     title: "Home",

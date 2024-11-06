@@ -9,7 +9,7 @@ const addProject = (req, res) => {
     user: req.session.user
   });
 }
-
+S
 const projectPost = async (req, res) => {
   try {
     const { name, startDate, endDate, description, technologies } = req.body;
@@ -51,10 +51,16 @@ const editProject = async (req, res) => {
     description, technologies, image 
     FROM projects WHERE id=${id}`;
   const project = await sequelize.query(query, { type: QueryTypes.SELECT });
+  let imagePath = project[0].image;
+
+  if (req.file) {
+    imagePath = req.file.path
+  }
 
   res.render("edit-project", {
     title: "Edit Project",
     project: project[0],
+    image: imagePath,
     user: req.session.user
   });
 }
@@ -63,13 +69,16 @@ const editProjectPost = async (req, res) => {
   try {
     const { id } = req.params;
     const { name, startDate, endDate, description, technologies } = req.body;
-
-    // const a = `SELECT * from projects WHERE id = ${id}`
-    // const project = await sequelize.query
-
-    const imagePath = req.file.path;
-    const query = `UPDATE projects SET name='${name}',start_date='${startDate}',end_date='${endDate}',description='${description}',technologies='{${technologies}}',image='${imagePath}' WHERE id=${id}`;
-    await sequelize.query(query, { type: QueryTypes.UPDATE });
+    // get existing image url
+    const querySelect = `SELECT * from projects WHERE id = ${id}`
+    const project = await sequelize.query(querySelect, { type: QueryTypes.SELECT });
+    let imagePath = project[0].image
+    // check if upload new image
+    if (req.file) {
+      imagePath = req.file.path
+    }
+    const queryUpdate = `UPDATE projects SET name='${name}',start_date='${startDate}',end_date='${endDate}',description='${description}',technologies='{${technologies}}',image='${imagePath}' WHERE id=${id}`;
+    await sequelize.query(queryUpdate, { type: QueryTypes.UPDATE });
     req.flash("success", "Project edited successful!");
     res.redirect("/");
   } catch (err) {
