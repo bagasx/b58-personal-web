@@ -17,7 +17,7 @@ const projectPost = async (req, res) => {
     const imagePath = req.file.path;
     const query = `INSERT INTO projects(name,start_date,end_date,description,technologies,image,author_id) VALUES('${name}','${startDate}','${endDate}','${description}','{${technologies}}','${imagePath}','${id}')`;
     await sequelize.query(query, { type: QueryTypes.INSERT });
-    req.flash("success", "Project added successfully!");
+    req.flash("success", "Project added!");
     res.render("add-project", { user: req.session.user });
   } catch (err) {
     req.flash("error", "Project failed to add!");
