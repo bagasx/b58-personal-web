@@ -9,7 +9,7 @@ const addProject = (req, res) => {
     user: req.session.user
   });
 }
-S
+
 const projectPost = async (req, res) => {
   try {
     const { name, startDate, endDate, description, technologies } = req.body;
