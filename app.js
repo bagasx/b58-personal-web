@@ -20,7 +20,7 @@ require("./src/helpers/helper");
 // app settings
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "./src/views"));
-app.use("/assets", express.static("./src/assets"));
+app.use("/assets", path.join(__dirname, "./src/assets"));
 app.use("/uploads", express.static("./uploads"));
 app.use(express.urlencoded({ extended: true }));
 
