@@ -5,6 +5,8 @@ const path = require("path");
 const session = require("express-session");
 const flash = require("express-flash");
 
+require("dotenv").config()
+
 // routes
 const homeRoute = require("./src/routes/homeRoute.js")
 const projectRoute = require("./src/routes/projectRoute.js")

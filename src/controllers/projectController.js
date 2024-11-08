@@ -1,6 +1,7 @@
-const config = require("../../config/config.json");
+const config = require("../../config/config");
 const { Sequelize, QueryTypes } = require("sequelize");
-const sequelize = new Sequelize(config.development);
+const environment = process.env.NODE_ENV
+const sequelize = new Sequelize(config[environment]);
 const fs = require('fs');
 
 const addProject = (req, res) => {
