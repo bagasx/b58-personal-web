@@ -5,12 +5,12 @@ const sequelize = new Sequelize(config[environment]);
 
 const home = async (req, res) => {
   const query = `SELECT projects.*, users.name AS author FROM projects LEFT JOIN users ON projects.author_id = users.id ORDER BY id DESC;`;
-  const projects = await sequelize.query(query, { type: QueryTypes.SELECT });
+  let projects = await sequelize.query(query, { type: QueryTypes.SELECT });
   const authorId = req.session.author
-  const authorProject = projects.filter(project => {
-    return project.author_id == authorId;
-  })
-  console.log(projects);
+  if (req.session.user) {
+    const query = `SELECT projects.*, users.name AS author FROM projects LEFT JOIN users ON projects.author_id = users.id WHERE author_id=${authorId} ORDER BY id DESC;`;
+    projects = await sequelize.query(query, { type: QueryTypes.SELECT });
+  }
 
   res.render("index", {
     title: "Home",
