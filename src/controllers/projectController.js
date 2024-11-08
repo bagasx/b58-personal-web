@@ -1,6 +1,7 @@
-const config = require("../config/config.json");
+const config = require("../../config/config.json");
 const { Sequelize, QueryTypes } = require("sequelize");
 const sequelize = new Sequelize(config.development);
+const fs = require('fs');
 
 const addProject = (req, res) => {
   res.render("add-project", {
@@ -75,6 +76,7 @@ const editProjectPost = async (req, res) => {
     let imagePath = project[0].image
     // check if upload new image
     if (req.file) {
+      fs.unlinkSync(`./${imagePath}`);
       imagePath = req.file.path
     }
     const queryUpdate = `UPDATE projects SET name='${name}',start_date='${startDate}',end_date='${endDate}',description='${description}',technologies='{${technologies}}',image='${imagePath}' WHERE id=${id}`;
@@ -90,6 +92,11 @@ const editProjectPost = async (req, res) => {
 const deleteProject = async (req, res) => {
   try {
     const { id } = req.params;
+    // delete image from uploads
+    const querySelect = `SELECT * from projects WHERE id = ${id}`
+    const project = await sequelize.query(querySelect, { type: QueryTypes.SELECT });
+    fs.unlinkSync(`./${project[0].image}`);
+    // delete data from database
     const query = `DELETE FROM projects WHERE id=${id}`;
     await sequelize.query(query, { type: QueryTypes.DELETE });
 

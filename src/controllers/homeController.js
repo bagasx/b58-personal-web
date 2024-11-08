@@ -1,4 +1,4 @@
-const config = require("../config/config.json");
+const config = require("../../config/config.json");
 const { Sequelize, QueryTypes } = require("sequelize");
 const sequelize = new Sequelize(config.development);
 
@@ -9,8 +9,8 @@ const home = async (req, res) => {
   const authorProject = projects.filter(project => {
     return project.author_id == authorId;
   })
-  // console.log(authorProject);
-  // console.log(authorProject)
+  console.log(projects);
+
   res.render("index", {
     title: "Home",
     projects,

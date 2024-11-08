@@ -11,6 +11,10 @@ body {
   object-fit: cover;
 }
 
+.tech {
+  height: 21px;
+}
+
 @media only screen and (max-width: 640px) {
   .form-container {
     width: 100% !important

@@ -1,4 +1,4 @@
-const config = require("../config/config.json");
+const config = require("../../config/config.json");
 const { Sequelize, QueryTypes } = require("sequelize");
 const sequelize = new Sequelize(config.development);
 const bcrypt = require("bcrypt");
@@ -37,7 +37,7 @@ const loginPost = async (req, res) => {
     return res.redirect("/login");
   }
 
-  req.flash("welcome", "Hello");
+  req.flash("success", "Login Success");
   req.session.user = user[0];
   req.session.author = user[0].id;
   res.redirect("/");

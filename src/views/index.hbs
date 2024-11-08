@@ -39,7 +39,6 @@
       <h2 class="text-center mb-5">MY PROJECT</h2>
       <div class="row row-cols-1 row-cols-lg-3 g-4">
         
-        
         {{#each projects}}
         <div class="col">
           <div class="card shadow">
@@ -47,11 +46,11 @@
             <img src="{{image}}" class="px-3 pt-3 card-img" alt="image" />
             <div class="card-body">
               <h5 class="card-title">{{name}}</h5>
-              <h6 class="card-subtitle mb-2 text-body-tertiary">Duration - {{dateDiff start_date end_date}}</h6>
-              <p class="card-text">{{description}}</p>
+              <h6 class="card-subtitle mb-2 text-body-tertiary">Duration: {{dateDiff start_date end_date}} | <span class="text-dark-emphasis">{{author}}</span></h6>
+              <p class="card-text text-truncate">{{description}}</p>
               <div class="d-flex gap-2">
                 {{#each technologies}}
-                <span class="badge text-bg-secondary">{{this}}</span>
+                <img src="./assets/icon/{{this}}.svg" class="tech" alt="{{this}}">
                 {{/each}}
               </div>
               {{#if ../user}}
